@@ -5,7 +5,7 @@ const notify=mongoose.Schema({
         type:String,
         required:true
     },
-    collab_id:{
+    colllaborator_id:{
         type:String,
         required:true
     },
@@ -17,10 +17,27 @@ const notify=mongoose.Schema({
         type:String,
         required:true
     },
-    questions: [{
+    host_questions: [{
         question: {
             type: String
         },
+        option:[
+           String
+        ],
+        correct: {
+            type: String
+        },
+        is_correct: {
+            type: Number
+        }
+    }],
+    colllaborator_questions: [{
+        question: {
+            type: String
+        },
+        option:[
+           String
+        ],
         correct: {
             type: String
         },
@@ -32,7 +49,10 @@ const notify=mongoose.Schema({
         type:Number,
         required:true 
     }
-})
+},
+{timestamps:true}
+
+)
 
 const Notification=mongoose.model("Notification",notify);
 module.exports=Notification

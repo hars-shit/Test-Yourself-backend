@@ -20,7 +20,7 @@ const response_Schema = mongoose.Schema({
             type: Number
         }
     }]
-})
+},{timestamps:true})
 
 const Response = mongoose.model("response", response_Schema)
 
